@@ -1,0 +1,11 @@
+.wrapper {
+  padding: 20px;
+}
+
+header {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  background: rgba(0, 105, 205, 0.8);
+  padding: 1em;
+}

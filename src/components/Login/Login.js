@@ -16,7 +16,7 @@ async function loginUser(credentials) {
         .then(data => data.json())
 }
 
-export default function Login({setToken}) {
+export default function Login({ setToken }) {
     const [username, setUserName] = useState();
     const [password, setPassword] = useState();
 
@@ -65,7 +65,7 @@ export default function Login({setToken}) {
                     <TextField id="outlined-search"
                                label="Username"
                                type="text"
-                               onChange={e => setUserName(e.target.value)}
+                               onChange={(e) => setUserName(e.target.value)}
                     />
                 </div>
                 <div>
@@ -73,7 +73,7 @@ export default function Login({setToken}) {
                                label="Password"
                                type="password"
                                autoComplete="current-password"
-                               onChange={e => setPassword(e.target.value)}
+                               onChange={(e) => setPassword(e.target.value)}
                     />
                 </div>
                 <div className="button-submit">
