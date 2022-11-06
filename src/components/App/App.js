@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import './App.css';
 import {Route, Routes} from "react-router-dom";
 import UploadFile from "../UploadFile/UploadFile";
-import Preferences from "../Preferences/Preferences";
+import ListImages from "../Preferences/ListImages";
 import Login from "../Login/Login";
 import {Box} from "@mui/material";
 import BasicMenu from "../BasicMenu/BasicMenu";
@@ -26,9 +26,9 @@ function App() {
             </header>
             <div className="wrapper">
                 <Routes>
-                    <Route path="/home" element={<MainPage/>}></Route>
-                    <Route path="/dashboard" element={<UploadFile/>}></Route>
-                    <Route path="/preferences" element={<Preferences/>}></Route>
+                    <Route path="/" element={<MainPage/>}></Route>
+                    <Route path="/upload-images" element={<UploadFile/>}></Route>
+                    <Route path="/list-images" element={<ListImages/>}></Route>
                 </Routes>
             </div>
         </Box>

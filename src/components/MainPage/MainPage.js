@@ -10,10 +10,10 @@ export default function MainPage() {
     }
     const navigate = useNavigate();
     const handleUpload = () => {
-        navigate("/dashboard");
+        navigate("/upload-images");
     }
     const handlePreferences = () => {
-        navigate("/preferences");
+        navigate("/list-images");
     }
     return (
         <div className="main">
@@ -27,7 +27,7 @@ export default function MainPage() {
                 sx={style}
                 variant="contained"
                 onClick={handlePreferences}
-            >Create User
+            >List Images
             </Button>
         </div>
     );
