@@ -3,7 +3,18 @@ import PropTypes from "prop-types";
 import Button from "@mui/material/Button";
 
 import "./Login.css"
-import {Box, createTheme, CssBaseline, TextField, ThemeProvider, Typography} from "@mui/material";
+import {
+    Box, Checkbox,
+    Container,
+    createTheme,
+    CssBaseline, FormControlLabel,
+    Grid,
+    Link,
+    TextField,
+    ThemeProvider,
+    Typography
+} from "@mui/material";
+import SignUp from "../SingUp/SignUp";
 
 async function loginUser(credentials) {
     return fetch('http://localhost:8080/login', {
@@ -16,7 +27,7 @@ async function loginUser(credentials) {
         .then(data => data.json())
 }
 
-export default function Login({ setToken }) {
+export default function Login({setToken}) {
     const [username, setUserName] = useState();
     const [password, setPassword] = useState();
 
@@ -46,41 +57,80 @@ export default function Login({ setToken }) {
         },
     });
 
+    const [showPlayer, setShowPlayer] = useState(false);
+
+    const handleSignUp = () => {
+        setShowPlayer(true);
+    }
+
     return (
-        <div className="login-wrapper">
             <ThemeProvider theme={theme}>
-                <CssBaseline />
-                <Typography variant="h4">Please Log In</Typography>
-            </ThemeProvider>
-            <Box component="form"
-                 sx={{
-                     '& .MuiTextField-root': {m: 1, width: '25ch'},
-                     '& button': {m: 1},
-                 }}
-                 noValidate
-                 autoComplete="off"
-                 onSubmit={handleSubmit}
-            >
-                <div>
-                    <TextField id="outlined-search"
-                               label="Username"
-                               type="text"
-                               onChange={(e) => setUserName(e.target.value)}
-                    />
-                </div>
-                <div>
-                    <TextField id="outlined-password-input"
-                               label="Password"
-                               type="password"
-                               autoComplete="current-password"
-                               onChange={(e) => setPassword(e.target.value)}
-                    />
-                </div>
-                <div className="button-submit">
-                    <Button variant="contained" type="submit">Submit</Button>
-                </div>
-            </Box>
-        </div>
+            {showPlayer ? <SignUp/> :
+                <Container component="main" maxWidth="xs">
+                    <CssBaseline/>
+                    <Box
+                        sx={{
+                            marginTop: 8,
+                            display: 'flex',
+                            flexDirection: 'column',
+                            alignItems: 'center',
+                        }}
+                    >
+                        <Typography component="h1" variant="h5">
+                            Sign in
+                        </Typography>
+                        <Box component="form" onSubmit={handleSubmit} noValidate sx={{mt: 1}}>
+                            <TextField
+                                margin="normal"
+                                required
+                                fullWidth
+                                id="email"
+                                label="Email Address"
+                                name="email"
+                                autoComplete="email"
+                                autoFocus
+                                onChange={(e) => setUserName(e.target.value)}
+                            />
+                            <TextField
+                                margin="normal"
+                                required
+                                fullWidth
+                                name="password"
+                                label="Password"
+                                type="password"
+                                id="password"
+                                autoComplete="current-password"
+                                onChange={(e) => setPassword(e.target.value)}
+                            />
+                            <FormControlLabel
+                                control={<Checkbox value="remember" color="primary"/>}
+                                label="Remember me"
+                            />
+                            <Button
+                                type="submit"
+                                fullWidth
+                                variant="contained"
+                                sx={{mt: 3, mb: 2}}
+                            >
+                                Sign In
+                            </Button>
+                            <Grid container>
+                                <Grid item xs>
+                                    <Link href="#" variant="body2">
+                                        Forgot password?
+                                    </Link>
+                                </Grid>
+                                <Grid item>
+                                    <Link onClick={handleSignUp} variant="body2">
+                                        {"Don't have an account? Sign Up"}
+                                    </Link>
+                                </Grid>
+                            </Grid>
+                        </Box>
+                    </Box>
+                </Container>
+            }
+        </ThemeProvider>
     );
 }
 

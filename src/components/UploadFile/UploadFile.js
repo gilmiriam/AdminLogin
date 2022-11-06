@@ -2,9 +2,9 @@ import React, {useState} from 'react';
 import Button from "@mui/material/Button";
 import {Box} from "@mui/material";
 
-import "./Dashboard.css"
+import "./UploadFile.css"
 
-export default function Dashboard() {
+export default function UploadFile() {
     const [selectedFile, setSelectedFile] = useState();
     const [isFilePicked, setIsFilePicked] = useState(false);
 
