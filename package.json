@@ -2,7 +2,7 @@
   "name": "react_example",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://gilmiriam.github.io/react-gh-pages",
+  "homepage": "https://gilmiriam.github.io/AdminLogin",
   "dependencies": {
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
