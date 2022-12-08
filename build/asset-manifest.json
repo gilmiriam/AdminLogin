@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/AdminLogin/static/css/main.659ff970.css",
+    "main.js": "/AdminLogin/static/js/main.f064347b.js",
+    "static/js/787.aff05db8.chunk.js": "/AdminLogin/static/js/787.aff05db8.chunk.js",
+    "index.html": "/AdminLogin/index.html",
+    "main.659ff970.css.map": "/AdminLogin/static/css/main.659ff970.css.map",
+    "main.f064347b.js.map": "/AdminLogin/static/js/main.f064347b.js.map",
+    "787.aff05db8.chunk.js.map": "/AdminLogin/static/js/787.aff05db8.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.659ff970.css",
+    "static/js/main.f064347b.js"
+  ]
+}
